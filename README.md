@@ -116,7 +116,7 @@ module "data_mgmt_zone" {
 | <a name="input_location"></a> [location](#input\_location) | Target Azure location to deploy the resource | `string` | `"UK South"` | no |
 | <a name="input_message_retention"></a> [message\_retention](#input\_message\_retention) | Message retention value | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The default name will be data-mgmt+env, you can override the data-mgmt part by setting this | `string` | `null` | no |
-| <a name="input_services"></a> [services](#input\_services) | List of services to create Eventhubs in the namespace | `list(string)` | n/a | yes |
+| <a name="input_services"></a> [services](#input\_services) | Map of Event Hubs with configurations | <pre>map(object({<br/>    partition_count   = number<br/>    message_retention = string<br/>  }))</pre> | n/a | yes |
 | <a name="input_services_subnet_address_space"></a> [services\_subnet\_address\_space](#input\_services\_subnet\_address\_space) | The address space for the services subnet. This is only used if you are specifying additional subnets. | `list(string)` | `null` | no |
 | <a name="input_zone_redundant"></a> [zone\_redundant](#input\_zone\_redundant) | Allows you to make eventhub namespace zone reduntdant | `bool` | `false` | no |
 
