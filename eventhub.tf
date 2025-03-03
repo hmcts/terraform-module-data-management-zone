@@ -8,12 +8,12 @@ resource "azurerm_eventhub_namespace" "eventhub-namespace" {
 }
 
 resource "azurerm_eventhub" "eventhub" {
-  for_each            = toset(var.services)
+  for_each            = var.services
   name                = each.key
   namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
   resource_group_name = local.resource_group
-  partition_count     = 4
-  message_retention   = var.message_retention
+  partition_count     = each.value.partition_count
+  message_retention   = each.value.message_retention
 }
 
 resource "azurerm_eventhub_namespace_authorization_rule" "eventhub-sender" {
