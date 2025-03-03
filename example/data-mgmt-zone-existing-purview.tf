@@ -14,9 +14,8 @@ module "data_mgmt_zone_existing_purview" {
   hub_vnet_name             = var.hub_vnet_name
   hub_resource_group_name   = var.hub_resource_group_name
 
-  services          = var.services
-  message_retention = var.message_retention
-  eventhub_ns_sku   = var.eventhub_ns_sku
+  services        = var.services
+  eventhub_ns_sku = var.eventhub_ns_sku
 
   existing_purview_account = {
     resource_id                = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.Purview/accounts/mi-purview-sbox"
