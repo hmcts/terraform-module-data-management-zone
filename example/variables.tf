@@ -34,10 +34,9 @@ variable "eventhub_ns_sku" {
 }
 
 variable "services" {
-  description = "List of services to create Eventhubs in the namespace"
-  type        = list(string)
-}
-variable "message_retention" {
-  description = "Message retention value"
-  type        = string
+  description = "Map of Event Hubs with configurations"
+  type = map(object({
+    partition_count   = number
+    message_retention = string
+  }))
 }
