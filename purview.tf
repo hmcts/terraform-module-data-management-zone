@@ -13,12 +13,6 @@ resource "azurerm_purview_account" "this" {
   tags = var.common_tags
 }
 
-data "azurerm_purview_account" "existing" {
-  count               = var.existing_purview_account == null ? 0 : 1
-  name                = var.existing_purview_account
-  resource_group_name = local.resource_group
-}
-
 resource "azurerm_private_endpoint" "purview_endpoint" {
   for_each            = local.purview_private_endpoints
   name                = "${local.name}-purview-endpoint-${each.key}-${var.env}"
