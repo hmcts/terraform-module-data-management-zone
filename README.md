@@ -61,8 +61,8 @@ module "data_mgmt_zone" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.75.0 |
-| <a name="provider_azurerm.ssptl"></a> [azurerm.ssptl](#provider\_azurerm.ssptl) | 3.75.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.74.0 |
+| <a name="provider_azurerm.ssptl"></a> [azurerm.ssptl](#provider\_azurerm.ssptl) | >= 3.74.0 |
 
 ## Modules
 
@@ -90,6 +90,7 @@ module "data_mgmt_zone" {
 | [azurerm_synapse_private_link_hub.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_private_link_hub) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
+| [azurerm_purview_account.existing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/purview_account) | data source |
 | [azurerm_resource_group.existing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 | [azurerm_subnet.ssptl-00](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
 | [azurerm_subnet.ssptl-01](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
