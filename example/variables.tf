@@ -27,3 +27,17 @@ variable "common_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "eventhub_ns_sku" {
+  description = "Event Hub Namespace SKU"
+  type        = string
+}
+
+variable "services" {
+  description = "List of services to create Eventhubs in the namespace"
+  type        = list(string)
+}
+variable "message_retention" {
+  description = "Message retention value"
+  type        = string
+}
