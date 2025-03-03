@@ -42,8 +42,3 @@ variable "services" {
     message_retention = string
   }))
 }
-
-variable "message_retention" {
-  description = "Message retention value"
-  type        = string
-}
