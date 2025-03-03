@@ -83,3 +83,9 @@ variable "eventhub_capacity" {
   default     = 1
   description = "The capacity of the eventhub namespace"
 }
+
+variable "auto_inflate_enabled" {
+  description = "Whether auto inflate enabled in the eventhub namespace"
+  type        = bool
+  default     = false
+}
