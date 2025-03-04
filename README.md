@@ -115,6 +115,7 @@ module "data_mgmt_zone" {
 | <a name="input_hub_resource_group_name"></a> [hub\_resource\_group\_name](#input\_hub\_resource\_group\_name) | The name of the resource group containing the HUB virtual network. | `string` | n/a | yes |
 | <a name="input_hub_vnet_name"></a> [hub\_vnet\_name](#input\_hub\_vnet\_name) | The name of the HUB virtual network. | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Target Azure location to deploy the resource | `string` | `"UK South"` | no |
+| <a name="input_maximum_throughput_units"></a> [maximum\_throughput\_units](#input\_maximum\_throughput\_units) | The maximum throughput units of the eventhub namespace | `number` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | The default name will be data-mgmt+env, you can override the data-mgmt part by setting this | `string` | `null` | no |
 | <a name="input_services"></a> [services](#input\_services) | Map of Event Hubs with configurations | <pre>map(object({<br/>    partition_count   = number<br/>    message_retention = string<br/>  }))</pre> | n/a | yes |
 | <a name="input_services_subnet_address_space"></a> [services\_subnet\_address\_space](#input\_services\_subnet\_address\_space) | The address space for the services subnet. This is only used if you are specifying additional subnets. | `list(string)` | `null` | no |
