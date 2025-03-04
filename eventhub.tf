@@ -1,11 +1,12 @@
 resource "azurerm_eventhub_namespace" "eventhub-namespace" {
-  name                 = "${var.env}-dlrm-eventhub-ns"
-  location             = var.location
-  resource_group_name  = local.resource_group
-  sku                  = var.eventhub_ns_sku
-  tags                 = var.common_tags
-  capacity             = var.eventhub_capacity
-  auto_inflate_enabled = var.auto_inflate_enabled
+  name                     = "${var.env}-dlrm-eventhub-ns"
+  location                 = var.location
+  resource_group_name      = local.resource_group
+  sku                      = var.eventhub_ns_sku
+  tags                     = var.common_tags
+  capacity                 = var.eventhub_capacity
+  auto_inflate_enabled     = var.auto_inflate_enabled
+  maximum_throughput_units = var.maximum_throughput_units
 }
 
 resource "azurerm_eventhub" "eventhub" {

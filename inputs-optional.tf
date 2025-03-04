@@ -89,3 +89,9 @@ variable "auto_inflate_enabled" {
   type        = bool
   default     = false
 }
+
+variable "maximum_throughput_units" {
+  description = "The maximum throughput units of the eventhub namespace"
+  type        = number
+  default     = null
+}
