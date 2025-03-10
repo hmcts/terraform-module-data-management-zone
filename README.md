@@ -61,8 +61,8 @@ module "data_mgmt_zone" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.75.0 |
-| <a name="provider_azurerm.ssptl"></a> [azurerm.ssptl](#provider\_azurerm.ssptl) | 3.75.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.74.0 |
+| <a name="provider_azurerm.ssptl"></a> [azurerm.ssptl](#provider\_azurerm.ssptl) | >= 3.74.0 |
 
 ## Modules
 
@@ -102,6 +102,7 @@ module "data_mgmt_zone" {
 | <a name="input_additional_kv_access_policies"></a> [additional\_kv\_access\_policies](#input\_additional\_kv\_access\_policies) | Additional access policies to add to the key vault | <pre>map(object({<br/>    secret_permissions      = optional(list(string), [])<br/>    certificate_permissions = optional(list(string), [])<br/>    key_permissions         = optional(list(string), [])<br/>  }))</pre> | `{}` | no |
 | <a name="input_additional_subnets"></a> [additional\_subnets](#input\_additional\_subnets) | This module by default deploys a 'services' subnet with the address space of the virtual network. If you need additional subnets, you can specify them here. | <pre>map(object({<br/>    address_prefixes  = list(string),<br/>    service_endpoints = optional(list(string), []),<br/>    delegations = optional(map(object({<br/>      service_name = string,<br/>      actions      = optional(list(string), [])<br/>    })))<br/>  }))</pre> | `{}` | no |
 | <a name="input_address_space"></a> [address\_space](#input\_address\_space) | The address space covered by the virtual network. | `list(string)` | n/a | yes |
+| <a name="input_auto_inflate_enabled"></a> [auto\_inflate\_enabled](#input\_auto\_inflate\_enabled) | Whether auto inflate enabled in the eventhub namespace | `bool` | `false` | no |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Common tag to be applied to resources | `map(string)` | n/a | yes |
 | <a name="input_create_role_assignments"></a> [create\_role\_assignments](#input\_create\_role\_assignments) | Whether to create role assignments for the identity, this requires higher privileges. Defaults to true | `bool` | `true` | no |
 | <a name="input_default_route_next_hop_ip"></a> [default\_route\_next\_hop\_ip](#input\_default\_route\_next\_hop\_ip) | IP address of the next hop for the default route, this will usually be the private ip config of the Palo Load Balancer. | `string` | n/a | yes |
@@ -114,9 +115,9 @@ module "data_mgmt_zone" {
 | <a name="input_hub_resource_group_name"></a> [hub\_resource\_group\_name](#input\_hub\_resource\_group\_name) | The name of the resource group containing the HUB virtual network. | `string` | n/a | yes |
 | <a name="input_hub_vnet_name"></a> [hub\_vnet\_name](#input\_hub\_vnet\_name) | The name of the HUB virtual network. | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Target Azure location to deploy the resource | `string` | `"UK South"` | no |
-| <a name="input_message_retention"></a> [message\_retention](#input\_message\_retention) | Message retention value | `string` | n/a | yes |
+| <a name="input_maximum_throughput_units"></a> [maximum\_throughput\_units](#input\_maximum\_throughput\_units) | The maximum throughput units of the eventhub namespace | `number` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | The default name will be data-mgmt+env, you can override the data-mgmt part by setting this | `string` | `null` | no |
-| <a name="input_services"></a> [services](#input\_services) | List of services to create Eventhubs in the namespace | `list(string)` | n/a | yes |
+| <a name="input_services"></a> [services](#input\_services) | Map of Event Hubs with configurations | <pre>map(object({<br/>    partition_count   = number<br/>    message_retention = string<br/>  }))</pre> | n/a | yes |
 | <a name="input_services_subnet_address_space"></a> [services\_subnet\_address\_space](#input\_services\_subnet\_address\_space) | The address space for the services subnet. This is only used if you are specifying additional subnets. | `list(string)` | `null` | no |
 | <a name="input_zone_redundant"></a> [zone\_redundant](#input\_zone\_redundant) | Allows you to make eventhub namespace zone reduntdant | `bool` | `false` | no |
 
