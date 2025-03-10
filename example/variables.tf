@@ -27,3 +27,16 @@ variable "common_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "eventhub_ns_sku" {
+  description = "Event Hub Namespace SKU"
+  type        = string
+}
+
+variable "services" {
+  description = "Map of Event Hubs with configurations"
+  type = map(object({
+    partition_count   = number
+    message_retention = string
+  }))
+}
