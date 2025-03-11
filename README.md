@@ -77,6 +77,7 @@ module "data_mgmt_zone" {
 | Name | Type |
 |------|------|
 | [azurerm_eventhub.eventhub](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventhub) | resource |
+| [azurerm_eventhub_authorization_rule.eventhub_auth_rules](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventhub_authorization_rule) | resource |
 | [azurerm_eventhub_namespace.eventhub-namespace](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventhub_namespace) | resource |
 | [azurerm_eventhub_namespace_authorization_rule.eventhub-sender](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventhub_namespace_authorization_rule) | resource |
 | [azurerm_key_vault_access_policy.additional_policies](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
@@ -108,6 +109,7 @@ module "data_mgmt_zone" {
 | <a name="input_default_route_next_hop_ip"></a> [default\_route\_next\_hop\_ip](#input\_default\_route\_next\_hop\_ip) | IP address of the next hop for the default route, this will usually be the private ip config of the Palo Load Balancer. | `string` | n/a | yes |
 | <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | DNS servers to set as the default for the virtual network. | `list(string)` | `[]` | no |
 | <a name="input_env"></a> [env](#input\_env) | Environment value | `string` | n/a | yes |
+| <a name="input_eventhub_auth_rules"></a> [eventhub\_auth\_rules](#input\_eventhub\_auth\_rules) | n/a | <pre>map(object({<br/>    name   = string<br/>    listen = bool<br/>    send   = bool<br/>    manage = bool<br/>  }))</pre> | n/a | yes |
 | <a name="input_eventhub_capacity"></a> [eventhub\_capacity](#input\_eventhub\_capacity) | The capacity of the eventhub namespace | `number` | `1` | no |
 | <a name="input_eventhub_ns_sku"></a> [eventhub\_ns\_sku](#input\_eventhub\_ns\_sku) | Event Hub Namespace SKU | `string` | n/a | yes |
 | <a name="input_existing_purview_account"></a> [existing\_purview\_account](#input\_existing\_purview\_account) | Details of an existing purview account to use, if not specified a new one will be created. | <pre>object({<br/>    resource_id                              = string<br/>    managed_storage_account_id               = optional(string)<br/>    managed_event_hub_namespace_id           = optional(string)<br/>    self_hosted_integration_runtime_auth_key = optional(string)<br/>    identity = object({<br/>      principal_id = string<br/>      tenant_id    = string<br/>    })<br/>  })</pre> | `null` | no |
