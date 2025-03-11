@@ -97,10 +97,12 @@ variable "maximum_throughput_units" {
 }
 
 variable "eventhub_auth_rules" {
+  description = "Allows custom authorisation rules to be created for eventhubs"
   type = map(object({
     name   = string
     listen = bool
     send   = bool
     manage = bool
   }))
+  default = {}
 }
