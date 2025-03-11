@@ -26,3 +26,16 @@ resource "azurerm_eventhub_namespace_authorization_rule" "eventhub-sender" {
   send                = true
   manage              = false
 }
+
+resource "azurerm_eventhub_authorization_rule" "eventhub_auth_rules" {
+  for_each = var.eventhub_auth_rules
+
+  name                = each.value.name
+  eventhub_name       = each.key
+  namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
+  resource_group_name = local.resource_group
+
+  listen = each.value.listen
+  send   = each.value.send
+  manage = each.value.manage
+}

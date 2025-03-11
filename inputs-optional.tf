@@ -95,3 +95,12 @@ variable "maximum_throughput_units" {
   type        = number
   default     = null
 }
+
+variable "eventhub_auth_rules" {
+  type = map(object({
+    name   = string
+    listen = bool
+    send   = bool
+    manage = bool
+  }))
+}
