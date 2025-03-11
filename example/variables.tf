@@ -40,3 +40,12 @@ variable "services" {
     message_retention = string
   }))
 }
+
+variable "eventhub_auth_rules" {
+  type = map(object({
+    name   = string
+    listen = bool
+    send   = bool
+    manage = bool
+  }))
+}
