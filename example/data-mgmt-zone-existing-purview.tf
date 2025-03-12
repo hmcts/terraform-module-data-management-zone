@@ -18,6 +18,7 @@ module "data_mgmt_zone_existing_purview" {
   eventhub_ns_sku               = var.eventhub_ns_sku
   eventhub_auth_rules           = var.eventhub_auth_rules
   eventhub_namespace_auth_rules = var.eventhub_namespace_auth_rules
+  eventhub_consumer_groups      = var.eventhub_consumer_groups
 
   existing_purview_account = {
     resource_id                = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.Purview/accounts/mi-purview-sbox"

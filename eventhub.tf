@@ -28,27 +28,31 @@ resource "azurerm_eventhub_namespace_authorization_rule" "eventhub-sender" {
 }
 
 resource "azurerm_eventhub_namespace_authorization_rule" "eventhub_namespace_auth_rules" {
-  for_each = var.eventhub_namespace_auth_rules
-
+  for_each            = var.eventhub_namespace_auth_rules
   name                = each.value.name
   namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
   resource_group_name = local.resource_group
-
-  listen = each.value.listen
-  send   = each.value.send
-  manage = each.value.manage
+  listen              = each.value.listen
+  send                = each.value.send
+  manage              = each.value.manage
 }
 
 
 resource "azurerm_eventhub_authorization_rule" "eventhub_auth_rules" {
-  for_each = var.eventhub_auth_rules
-
+  for_each            = var.eventhub_auth_rules
   name                = each.value.name
   eventhub_name       = each.key
   namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
   resource_group_name = local.resource_group
+  listen              = each.value.listen
+  send                = each.value.send
+  manage              = each.value.manage
+}
 
-  listen = each.value.listen
-  send   = each.value.send
-  manage = each.value.manage
+resource "azurerm_eventhub_consumer_group" "eventhub_consumer_groups" {
+  for_each            = var.eventhub_consumer_groups
+  name                = each.value.name
+  eventhub_name       = each.key
+  namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
+  resource_group_name = local.resource_group
 }

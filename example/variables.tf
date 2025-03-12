@@ -61,3 +61,11 @@ variable "eventhub_namespace_auth_rules" {
   }))
   default = {}
 }
+
+variable "eventhub_consumer_groups" {
+  description = "Allows custom authorisation rules to be created for eventhub namespaces"
+  type = map(object({
+    name = string
+  }))
+}
+
