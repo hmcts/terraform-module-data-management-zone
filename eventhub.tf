@@ -18,6 +18,15 @@ resource "azurerm_eventhub" "eventhub" {
   message_retention   = each.value.message_retention
 }
 
+resource "azurerm_eventhub_namespace_authorization_rule" "eventhub-sender" {
+  name                = "dlrm-eventhub-namespace-sender"
+  namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
+  resource_group_name = local.resource_group
+  listen              = false
+  send                = true
+  manage              = false
+}
+
 resource "azurerm_eventhub_namespace_authorization_rule" "eventhub_namespace_auth_rules" {
   for_each = var.eventhub_namespace_auth_rules
 
