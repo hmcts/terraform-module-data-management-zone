@@ -42,10 +42,22 @@ variable "services" {
 }
 
 variable "eventhub_auth_rules" {
+  description = "Allows custom authorisation rules to be created for eventhubs"
   type = map(object({
     name   = string
     listen = bool
     send   = bool
     manage = bool
   }))
+}
+
+variable "eventhub_namespace_auth_rules" {
+  description = "Allows custom authorisation rules to be created for eventhub namespaces"
+  type = map(object({
+    name   = string
+    listen = bool
+    send   = bool
+    manage = bool
+  }))
+  default = {}
 }
