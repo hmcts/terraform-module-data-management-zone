@@ -11,8 +11,6 @@ resource "azurerm_eventhub_namespace" "eventhub-namespace" {
     default_action                 = "Allow"
     public_network_access_enabled  = true
     trusted_service_access_enabled = false
-    ip_rule {}
-    virtual_network_rule {}
   }
 }
 
