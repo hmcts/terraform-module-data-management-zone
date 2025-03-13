@@ -17,4 +17,5 @@ module "data_mgmt_zone" {
   eventhub_ns_sku               = var.eventhub_ns_sku
   eventhub_auth_rules           = var.eventhub_auth_rules
   eventhub_namespace_auth_rules = var.eventhub_namespace_auth_rules
+  eventhub_consumer_groups      = var.eventhub_consumer_groups
 }
