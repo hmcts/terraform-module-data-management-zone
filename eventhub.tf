@@ -7,6 +7,11 @@ resource "azurerm_eventhub_namespace" "eventhub-namespace" {
   capacity                 = var.eventhub_capacity
   auto_inflate_enabled     = var.auto_inflate_enabled
   maximum_throughput_units = var.maximum_throughput_units
+  network_rulesets {
+    default_action                 = "Allow"
+    public_network_access_enabled  = true
+    trusted_service_access_enabled = false
+  }
 }
 
 resource "azurerm_eventhub" "eventhub" {
