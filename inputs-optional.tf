@@ -90,12 +90,6 @@ variable "auto_inflate_enabled" {
   default     = false
 }
 
-variable "maximum_throughput_units" {
-  description = "The maximum throughput units of the eventhub namespace"
-  type        = number
-  default     = null
-}
-
 variable "eventhub_auth_rules" {
   description = "Allows custom authorisation rules to be created for eventhubs"
   type = map(object({
