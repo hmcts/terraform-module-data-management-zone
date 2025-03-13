@@ -61,12 +61,3 @@ resource "azurerm_eventhub_consumer_group" "eventhub_consumer_groups" {
   namespace_name      = azurerm_eventhub_namespace.eventhub-namespace.name
   resource_group_name = local.resource_group
 }
-
-resource "azurerm_eventhub_namespace_network_rule_set" "eventhub_network_rules" {
-  namespace_name                 = azurerm_eventhub_namespace.eventhub-namespace.name
-  resource_group_name            = local.resource_group
-  default_action                 = "Allow"
-  public_network_access_enabled  = true
-  trusted_service_access_enabled = false
-  depends_on                     = [azurerm_eventhub_namespace.eventhub-namespace]
-}
