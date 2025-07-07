@@ -27,18 +27,3 @@ variable "hub_resource_group_name" {
   description = "The name of the resource group containing the HUB virtual network."
   type        = string
 }
-
-#Event Hub
-
-variable "eventhub_ns_sku" {
-  description = "Event Hub Namespace SKU"
-  type        = string
-}
-
-variable "services" {
-  description = "Map of Event Hubs with configurations"
-  type = map(object({
-    partition_count   = number
-    message_retention = string
-  }))
-}
