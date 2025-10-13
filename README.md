@@ -111,6 +111,8 @@ module "data_mgmt_zone" {
 | <a name="input_location"></a> [location](#input\_location) | Target Azure location to deploy the resource | `string` | `"UK South"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The default name will be data-mgmt+env, you can override the data-mgmt part by setting this | `string` | `null` | no |
 | <a name="input_services_subnet_address_space"></a> [services\_subnet\_address\_space](#input\_services\_subnet\_address\_space) | The address space for the services subnet. This is only used if you are specifying additional subnets. | `list(string)` | `null` | no |
+| <a name="input_ssptl_vnet_name"></a> [ssptl\_vnet\_name](#input\_ssptl\_vnet\_name) | The name of the SSPTL virtual network. Defaults to 'ss-ptlsbox-vnet' for sandbox environments and 'ss-ptl-vnet' for others. | `string` | `null` | no |
+| <a name="input_ssptl_vnet_resource_group"></a> [ssptl\_vnet\_resource\_group](#input\_ssptl\_vnet\_resource\_group) | The resource group name of the SSPTL virtual network. Defaults to 'ss-ptlsbox-network-rg' for sandbox environments and 'ss-ptl-network-rg' for others. | `string` | `null` | no |
 
 ## Outputs
 

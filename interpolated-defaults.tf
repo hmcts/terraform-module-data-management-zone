@@ -44,8 +44,8 @@ locals {
   }
   non_null_purview_private_endpoints = { for key, value in local.purview_private_endpoints : key => value if value.resource_id != null }
 
-  ssptl_vnet_name           = local.is_sbox ? "ss-ptlsbox-vnet" : "ss-ptl-vnet"
-  ssptl_vnet_resource_group = local.is_sbox ? "ss-ptlsbox-network-rg" : "ss-ptl-network-rg"
+  ssptl_vnet_name           = var.ssptl_vnet_name != null ? var.ssptl_vnet_name : (local.is_sbox ? "ss-ptlsbox-vnet" : "ss-ptl-vnet")
+  ssptl_vnet_resource_group = var.ssptl_vnet_resource_group != null ? var.ssptl_vnet_resource_group : (local.is_sbox ? "ss-ptlsbox-network-rg" : "ss-ptl-network-rg")
 }
 
 data "azurerm_subnet" "ssptl-00" {
