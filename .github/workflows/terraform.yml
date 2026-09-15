@@ -16,14 +16,13 @@ jobs:
         with:
           repository: hmcts/cnp-azuredevops-libraries
           path: cnp-azuredevops-libraries
-          ref: DTSPO-34656/tfenv-install
 
       - name: Setup Script
         run: |
           chmod +x cnp-azuredevops-libraries/scripts/tfenv-install-terraform.sh
 
       - name: Setup Terraform
-        run: ./cnp-azuredevops-libraries/scripts/tfenv-install-terraform.sh v3.2.2
+        run: ./cnp-azuredevops-libraries/scripts/tfenv-install-terraform.sh
         working-directory: ./
         shell: bash
 
