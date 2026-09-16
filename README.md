@@ -55,14 +55,14 @@ module "data_mgmt_zone" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.74.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.81.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.74.0 |
-| <a name="provider_azurerm.ssptl"></a> [azurerm.ssptl](#provider\_azurerm.ssptl) | >= 3.74.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.81.0 |
+| <a name="provider_azurerm.ssptl"></a> [azurerm.ssptl](#provider\_azurerm.ssptl) | 4.81.0 |
 
 ## Modules
 
@@ -76,21 +76,21 @@ module "data_mgmt_zone" {
 
 | Name | Type |
 |------|------|
-| [azurerm_key_vault_access_policy.additional_policies](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_access_policy.purview](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_private_endpoint.kv_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint) | resource |
-| [azurerm_private_endpoint.purview_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint) | resource |
-| [azurerm_private_endpoint.synapse_private_link_hub_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint) | resource |
-| [azurerm_purview_account.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/purview_account) | resource |
-| [azurerm_resource_group.new](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
-| [azurerm_role_assignment.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
-| [azurerm_synapse_private_link_hub.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_private_link_hub) | resource |
-| [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity) | resource |
-| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
-| [azurerm_resource_group.existing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
-| [azurerm_subnet.ssptl-00](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
-| [azurerm_subnet.ssptl-01](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
-| [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription) | data source |
+| [azurerm_key_vault_access_policy.additional_policies](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_access_policy.purview](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_private_endpoint.kv_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/private_endpoint) | resource |
+| [azurerm_private_endpoint.purview_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/private_endpoint) | resource |
+| [azurerm_private_endpoint.synapse_private_link_hub_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/private_endpoint) | resource |
+| [azurerm_purview_account.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/purview_account) | resource |
+| [azurerm_resource_group.new](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/resource_group) | resource |
+| [azurerm_role_assignment.name](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/role_assignment) | resource |
+| [azurerm_synapse_private_link_hub.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/synapse_private_link_hub) | resource |
+| [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/resources/user_assigned_identity) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/data-sources/client_config) | data source |
+| [azurerm_resource_group.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/data-sources/resource_group) | data source |
+| [azurerm_subnet.ssptl-00](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/data-sources/subnet) | data source |
+| [azurerm_subnet.ssptl-01](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/data-sources/subnet) | data source |
+| [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.81.0/docs/data-sources/subscription) | data source |
 
 ## Inputs
 
